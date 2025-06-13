@@ -10,7 +10,6 @@ This my first documented Arduino IoT project is both exciting and challenging. I
      > Voltage (V), Current (A), Power (W), Energy (kWh), Frequency (Hz), Power Factor.
    - Lcd 20x4 for data display
    - Push Button for select menu lcd display
-
    - Wire
    - Box
    - Terminal Block
