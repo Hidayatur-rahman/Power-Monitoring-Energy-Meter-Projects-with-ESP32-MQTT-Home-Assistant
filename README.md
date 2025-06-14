@@ -14,5 +14,6 @@ This my first documented Arduino IoT project is both exciting and challenging. I
    - Power Supply 220 AC to 5V Dc for Arduino and Pzem
    - PCB
 2. Hardware Configuration
-   
-    <img src="https://github.com/user-attachments/assets/8f447a4b-0fe4-4c89-9615-2d9e7c3dad05" width="900" alt="Untitled Design">
+   - Wiring Diagram
+     
+      <img src="https://github.com/user-attachments/assets/8f447a4b-0fe4-4c89-9615-2d9e7c3dad05" width="900" alt="Untitled Design">
