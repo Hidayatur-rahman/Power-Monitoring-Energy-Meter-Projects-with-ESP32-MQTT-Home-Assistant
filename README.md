@@ -16,4 +16,6 @@ This my first documented Arduino IoT project is both exciting and challenging. I
 2. Hardware Configuration
    - Wiring Diagram
      
-      <img src="https://github.com/user-attachments/assets/8f447a4b-0fe4-4c89-9615-2d9e7c3dad05" width="900" alt="Untitled Design">
+      ![image](https://github.com/user-attachments/assets/406f03c4-97b0-487b-ae78-fd535504a460)
+     
+      <img src="https://github.com/user-attachments/assets/8f447a4b-0fe4-4c89-9615-2d9e7c3dad05" width="915" alt="Untitled Design">
