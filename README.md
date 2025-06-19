@@ -45,7 +45,11 @@ This my first documented Arduino IoT project is both exciting and challenging. I
 ## **Firmware Setup** <a name="firmware-setup"></a>
 
 ## Arduino Code
-Disini saya menggunakan esp32 karena esp32 memiliki dual core cpu yang dimana core 1 akan menghandel program dan yang core 2 untuk wifi saja, ini sangat baik agar wifi tidak mengganggu kinerja program yang berjalan. selain itu esp32 dilengkapi dengan wifi yang dimana digunakan untuk mengirim data ke homeassitant melalui mqqt. berikut program untuk power dan energy monitoring:
+I'm using the ESP32 because it features a dual-core CPU, where:
+- Core 1 handles the main program execution
+- Core 2 is dedicated solely to WiFi operations
+  
+This architecture is ideal for preventing WiFi-related tasks from interfering with the core program's performance. Additionally, the ESP32 comes with built-in WiFi capabilities, which I utilize to transmit data to Home Assistant via MQTT.
 
 ##
 ```cpp
@@ -272,4 +276,5 @@ void loop(){
   // resetAndSaveEnergy();
   // serialMonitor();
 }
-   
+```
+The full Arduino sketch (including menu, getData, SettingButton and calculateEnergy) is available in the .ino folder within this project's directory.
