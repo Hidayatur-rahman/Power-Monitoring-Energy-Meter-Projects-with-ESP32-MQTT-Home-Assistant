@@ -98,6 +98,91 @@ It displays the values on a **20x4 LCD** and sends data via **MQTT**. Three butt
   - Syncs time using NTP
     
 ---
+## 🖥️ Menu System
+
+The LCD interface provides an intuitive navigation system:
+
+### Main Menu
+
+1. Power Monitoring
+2. Electrical Parameters
+3. Energy Usage
+
+### Page Details
+
+#### 1. Power Monitoring
+- Voltage
+- Current
+- Power (Active)
+- Power Factor
+- Frequency
+- Daily Energy
+
+#### 2. Electrical Parameters
+- P (Active Power)
+- Q (Reactive Power)
+- S (Apparent Power)
+- CosΦ
+- Capacitor (µF)
+- Current
+
+#### 3. Energy Usage
+- Daily kWh
+- Monthly kWh
+- Total Energy (from PZEM)
+
+---
+
+## 🧮 Electrical Calculations
+
+| Parameter           | Formula                                               |
+|---------------------|--------------------------------------------------------|
+| Apparent Power (S)  | S = V × I                                              |
+| Reactive Power (Q)  | Q = √(S² - P²)                                         |
+| Phase Angle         | θ = acos(PF)                                           |
+| Capacitor Value (µF)| C = ((I × √(1 - PF²)) / (V × 2πf)) × 10⁶               |
+
+---
+
+## 📡 MQTT Integration
+
+### Published Topic: `home/sensor/allpower`
+Every 3 seconds, payload:
+```json
+{
+  "voltage": 220.1,
+  "current": 1.23,
+  "power": 271,
+  "energykWh": 2.12,
+  "frequency": 50.0,
+  "pf": 0.95,
+  "capacitorCalculate": 7.3,
+  "apparentPower": 280.0
+}
+```
+
+### Subscribed Topic: `home/sensor/energy`
+Expected payload:
+```json
+{
+  "daily_energy": 1.25,
+  "monthly_energy": 34.6
+}
+```
+
+---
+
+## 🔧 OTA Updates
+
+OTA is automatically enabled when connected to WiFi.
+To update:
+1. Open Arduino IDE
+2. Select `ESP32_EnergyMonitoring` port (network)
+3. Upload sketch via OTA
+
+Progress is shown via Serial Monitor.
+
+---
 
 ## Arduino Code
 I'm using the ESP32 because it features a dual-core CPU, where:
