@@ -15,21 +15,46 @@ Author : Hidayatur rahman
 This my first documented Arduino IoT project is both exciting and challenging. I'll be building A Smart Power meter using an ESP32, Pzem for data collection, MQTT for communication, and Home Assistant for visualization. This project will help understand core IoT concepts like sensor data collection, wireless connectivity, and real-time monitoring.
 
 ## **Features** <a name="features"></a> 
-1. Real-Time Energy Monitoring. Measures voltage (V), current (A), power (W), energy (kWh), frequency (Hz), and power factor with the PZEM-004T sensor.
-2. Wireless Data Transmission. Wifi and MQQT : Esp32 sends data to Home Assistant without cables.
-3. Energy Accumlated Function. Accumulated energy (kWh), Useful for monthly billing tracking.
-   
-## **Hardware Requirements** <a name="hardware-requirements"></a>  
-1. Hardware Component
-   - ESP32 for data processing and WiFi connectivity.
-   - Pzem004t to measure: Voltage (V), Current (A), Power (W), Energy (kWh), Frequency (Hz), Power Factor.
-   - Lcd 20x4 for data display
-   - Push Button for select menu lcd display
-   - Wire
-   - Box
-   - Terminal Block
-   - Power Supply 220 AC to 5V Dc for Arduino and Pzem
-   - PCB
+---
+| Feature              | Description                                             |
+|---------------------|---------------------------------------------------------|
+| Real-Time Monitoring| Reads data every second                                 |
+| Dual-Core Operation | Core 0 handles UI; Core 1 handles OTA/MQTT/NTP          |
+| MQTT Publish        | Sends JSON-formatted data every 3 seconds               |
+| MQTT Subscribe      | Receives daily/monthly energy updates                   |
+| LCD Menu Interface  | Interactive UI using buttons and display                |
+| Power Factor Calc   | Includes apparent/reactive power & capacitor estimate   |
+| OTA Update Support  | Remote firmware updates over WiFi                       |
+| NTP Time Sync       | Time sync using pool.ntp.org                            |
+
+---
+
+## 📘 Project Description
+
+This project measures and monitors AC electrical parameters like:
+
+- Voltage (V)
+- Current (A)
+- Active Power (W)
+- Apparent Power (VA)
+- Reactive Power (VAR)
+- Power Factor (CosΦ)
+- Frequency (Hz)
+- Energy Usage (kWh)
+
+It displays the values on a **20x4 LCD** and sends data via **MQTT**. Three buttons allow users to navigate an on-device menu. OTA and NTP functionality are also included.
+
+---
+## 🔩 Hardware Components
+
+| Component          | Description                                  |
+|-------------------|----------------------------------------------|
+| ESP32 Dev Board   | Dual-core MCU with WiFi                      |
+| PZEM004Tv30       | Power monitoring module (AC only)            |
+| 20x4 I2C LCD      | Data display module                          |
+| 3x Push Buttons   | Menu navigation (DOWN, OK, BACK)             |
+| Power Source      | 5V USB or regulator to power ESP32           |
+| Capacitor (calc.) | Displayed as required for PF correction      |
 2. Hardware Configuration
    - Schematics
      
