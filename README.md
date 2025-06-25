@@ -2,25 +2,27 @@
 
 A comprehensive real-time electrical power monitoring system using the **ESP32**, **PZEM-004T v3.0**, and a **20x4 I2C LCD**. Designed for integration with **Home Assistant**, **Node-RED**, or any MQTT dashboard, the system also supports **OTA updates**, and **multi-core ESP32 capabilities**.
 
----
 Author : Hidayatur rahman
+
 ---
 
-## 📚 Table of Contents 
+## Table of Contents 
 1. [Introduction](#introduction)
 2. [Features](#features)
-3. [Hardware Requirements](#hardware-requirements)  
-4. [Firmware Setup](#firmware-setup)  
-5. [Home Assistant Integration](#home-assistant-integration)  
-6. [Calibration](#calibration)  
-7. [Troubleshooting](#troubleshooting)  
-8. [License](#license)
+3. [Project Description](#project-description)
+4. [Hardware Components](#hardware-components)  
+5. [Firmware Setup](#firmware-setup)
+6. [MQQT Integration](#MQQT-integration)  
+7. [Home Assistant Integration](#home-assistant-integration)  
+8. [Calibration](#calibration)  
+9. [Troubleshooting](#troubleshooting)  
+10. [License](#license)
    
 ## **Introduction** <a name="introduction"></a>  
 This my first documented Arduino IoT project is both exciting and challenging. I'll be building A Smart Power meter using an ESP32, Pzem for data collection, MQTT for communication, and Home Assistant for visualization. This project will help understand core IoT concepts like sensor data collection, wireless connectivity, and real-time monitoring.
 
 ## **Features** <a name="features"></a> 
----
+
 | Feature              | Description                                             |
 |---------------------|---------------------------------------------------------|
 | Real-Time Monitoring| Reads data every second                                 |
@@ -32,9 +34,7 @@ This my first documented Arduino IoT project is both exciting and challenging. I
 | OTA Update Support  | Remote firmware updates over WiFi                       |
 | NTP Time Sync       | Time sync using pool.ntp.org                            |
 
----
-
-## 📘 Project Description
+## **Project Description** <a name="project-description"></a>
 
 This project measures and monitors AC electrical parameters like:
 
@@ -49,8 +49,7 @@ This project measures and monitors AC electrical parameters like:
 
 It displays the values on a **20x4 LCD** and sends data via **MQTT**. Three buttons allow users to navigate an on-device menu. OTA and NTP functionality are also included.
 
----
-## 🔩 Hardware Components
+## **Hardware Components** <a name="hardware-components"></a>
 
 | Component          | Description                                  |
 |-------------------|----------------------------------------------|
@@ -60,9 +59,8 @@ It displays the values on a **20x4 LCD** and sends data via **MQTT**. Three butt
 | 3x Push Buttons   | Menu navigation (DOWN, OK, BACK)             |
 | Power Source      | 5V USB or regulator to power ESP32           |
 | Capacitor (calc.) | Displayed as required for PF correction      |
----
 
-## 🔌 Hardware Connections
+## Hardware Connections
 
 ### ESP32 Wiring
 
@@ -88,7 +86,7 @@ It displays the values on a **20x4 LCD** and sends data via **MQTT**. Three butt
 ---
 ## **Firmware Setup** <a name="firmware-setup"></a>
 
-## 🧠 Software Architecture
+## Software Architecture
 
 - **Main Loop (Core 0)**
   - Handles button input
@@ -103,7 +101,7 @@ It displays the values on a **20x4 LCD** and sends data via **MQTT**. Three butt
   - Syncs time using NTP
     
 ---
-## 🖥️ Menu System
+## Menu System
 
 The LCD interface provides an intuitive navigation system:
 
@@ -138,7 +136,7 @@ The LCD interface provides an intuitive navigation system:
 
 ---
 
-## 🧮 Electrical Calculations
+## Electrical Calculations
 
 | Parameter           | Formula                                               |
 |---------------------|--------------------------------------------------------|
@@ -149,7 +147,7 @@ The LCD interface provides an intuitive navigation system:
 
 ---
 
-## 📡 MQTT Integration
+## **MQTT Integration** <a name="MQQT-integration"></a>
 
 ### Published Topic: `home/sensor/allpower`
 Every 3 seconds, payload:
@@ -177,7 +175,7 @@ Expected payload:
 
 ---
 
-## 🔧 OTA Updates
+## OTA Updates
 
 OTA is automatically enabled when connected to WiFi.
 To update:
