@@ -12,15 +12,18 @@ Author : Hidayatur rahman
 3. [Project Description](#project-description)
 4. [Hardware Components](#hardware-components)  
 5. [Firmware Setup](#firmware-setup)
-6. [MQQT Integration](#MQQT-integration)  
-7. [Home Assistant Integration](#home-assistant-integration)  
-8. [Calibration](#calibration)  
-9. [Troubleshooting](#troubleshooting)  
-10. [License](#license)
+6. [MQQT Integration](#mqqt-integration)
+7. [OTA Updates](#ota-updates)
+8. [Home Assistant Integration](#home-assistant-integration)
+9. [Arduino Code](#arduino-code)
+10. [Calibration](#calibration)  
+11. [Troubleshooting](#troubleshooting)  
+12. [License](#license)
    
 ## **Introduction** <a name="introduction"></a>  
 This my first documented Arduino IoT project is both exciting and challenging. I'll be building A Smart Power meter using an ESP32, Pzem for data collection, MQTT for communication, and Home Assistant for visualization. This project will help understand core IoT concepts like sensor data collection, wireless connectivity, and real-time monitoring.
 
+---
 ## **Features** <a name="features"></a> 
 
 | Feature              | Description                                             |
@@ -34,6 +37,7 @@ This my first documented Arduino IoT project is both exciting and challenging. I
 | OTA Update Support  | Remote firmware updates over WiFi                       |
 | NTP Time Sync       | Time sync using pool.ntp.org                            |
 
+---
 ## **Project Description** <a name="project-description"></a>
 
 This project measures and monitors AC electrical parameters like:
@@ -49,6 +53,7 @@ This project measures and monitors AC electrical parameters like:
 
 It displays the values on a **20x4 LCD** and sends data via **MQTT**. Three buttons allow users to navigate an on-device menu. OTA and NTP functionality are also included.
 
+---
 ## **Hardware Components** <a name="hardware-components"></a>
 
 | Component          | Description                                  |
@@ -60,6 +65,7 @@ It displays the values on a **20x4 LCD** and sends data via **MQTT**. Three butt
 | Power Source      | 5V USB or regulator to power ESP32           |
 | Capacitor (calc.) | Displayed as required for PF correction      |
 
+---
 ## Hardware Connections
 
 ### ESP32 Wiring
@@ -147,7 +153,7 @@ The LCD interface provides an intuitive navigation system:
 
 ---
 
-## **MQTT Integration** <a name="MQQT-integration"></a>
+## **MQTT Integration** <a name="mqqt-integration"></a>
 
 ### Published Topic: `home/sensor/allpower`
 Every 3 seconds, payload:
@@ -175,7 +181,7 @@ Expected payload:
 
 ---
 
-## OTA Updates
+## **OTA Updates** <a name="ota-updates"></a>
 
 OTA is automatically enabled when connected to WiFi.
 To update:
@@ -186,8 +192,11 @@ To update:
 Progress is shown via Serial Monitor.
 
 ---
+## **Home Assistant Integration** <a name="home-assistant-integration"></a>
 
-## Arduino Code
+---
+
+## **Arduino Code** <a name="arduino-code"></a>
 I'm using the ESP32 because it features a dual-core CPU, where:
 - Core 1 handles the main program execution
 - Core 2 is dedicated solely to WiFi operations
@@ -609,7 +618,7 @@ void padding10(int padVar) {
   if (padVar < 10) lcd.print(" ");
 }
 ```
-# 🚀 Getting Started
+# Getting Started
 
 1. Clone or download the repository.
 2. Open the project in Arduino IDE.
