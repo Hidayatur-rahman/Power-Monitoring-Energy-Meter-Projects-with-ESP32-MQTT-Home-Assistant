@@ -55,19 +55,48 @@ It displays the values on a **20x4 LCD** and sends data via **MQTT**. Three butt
 | 3x Push Buttons   | Menu navigation (DOWN, OK, BACK)             |
 | Power Source      | 5V USB or regulator to power ESP32           |
 | Capacitor (calc.) | Displayed as required for PF correction      |
-2. Hardware Configuration
-   - Schematics
+---
+
+## 🔌 Hardware Connections
+
+### ESP32 Wiring
+
+| ESP32 GPIO | Function          | Connection              |
+|------------|-------------------|--------------------------|
+| GPIO 33    | UART RX2 (PZEM Tx)| PZEM004T Tx             |
+| GPIO 32    | UART TX2 (PZEM Rx)| PZEM004T Rx             |
+| GPIO 25    | BACK Button       | Tactile switch to GND   |
+| GPIO 26    | DOWN Button       | Tactile switch to GND   |
+| GPIO 27    | OK Button         | Tactile switch to GND   |
+| GPIO 21/22 | I2C SDA/SCL       | LCD I2C module          |
+
+ - Schematics
      
       ![image](https://github.com/user-attachments/assets/406f03c4-97b0-487b-ae78-fd535504a460)
      
-   - Wiring 
+ - Wiring 
      
       <img src="https://github.com/user-attachments/assets/8f447a4b-0fe4-4c89-9615-2d9e7c3dad05" width="915" alt="Untitled Design">
 
-   - Implementaion
+ - Implementaion
      
-        
+---
+
 ## **Firmware Setup** <a name="firmware-setup"></a>
+
+## 🧠 Software Architecture
+
+- **Main Loop (Core 0)**
+  - Handles button input
+  - Updates LCD menu
+  - Reads data from sensor
+  - Performs calculations
+
+- **Core 1 Task**
+  - Handles OTA server
+  - Maintains MQTT connection
+  - Publishes JSON telemetry
+  - Syncs time using NTP
 
 ## Arduino Code
 I'm using the ESP32 because it features a dual-core CPU, where:
