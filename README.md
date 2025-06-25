@@ -98,6 +98,17 @@ It displays the values on a **20x4 LCD** and sends data via **MQTT**. Three butt
   - Publishes JSON telemetry
   - Syncs time using NTP
 
+### Loop Timing
+
+ | Task           | Interval     |
+ |----------------|--------------|
+ | Sensor Read    | 1 second     |
+ | MQTT Publish   | 3 seconds    |
+ | Button Polling | every loop   |
+
+---
+
+
 ## Arduino Code
 I'm using the ESP32 because it features a dual-core CPU, where:
 - Core 1 handles the main program execution
