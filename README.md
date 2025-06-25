@@ -1,7 +1,12 @@
-# Power-Monitoring-Energy-Meter-Projects-with-ESP32-MQTT-Home-Assistant
-Author : Hidayatur rahman
+# ⚡ ESP32 Power Monitoring System.
 
-## **Table of Contents**  
+A comprehensive real-time electrical power monitoring system using the **ESP32**, **PZEM-004T v3.0**, and a **20x4 I2C LCD**. Designed for integration with **Home Assistant**, **Node-RED**, or any MQTT dashboard, the system also supports **OTA updates**, and **multi-core ESP32 capabilities**.
+
+---
+Author : Hidayatur rahman
+---
+
+## 📚 Table of Contents 
 1. [Introduction](#introduction)
 2. [Features](#features)
 3. [Hardware Requirements](#hardware-requirements)  
@@ -606,3 +611,31 @@ void padding10(int padVar) {
   if (padVar < 10) lcd.print(" ");
 }
 ```
+# 🚀 Getting Started
+
+1. Clone or download the repository.
+2. Open the project in Arduino IDE.
+3. Install the required libraries:
+   - `PZEM004Tv30`
+   - `LiquidCrystal_I2C`
+   - `ArduinoJson`
+   - `PubSubClient`
+   - `ArduinoOTA`
+   - `NTPClient`
+4. Modify WiFi and MQTT settings in the code.
+5. Upload to ESP32 via USB.
+6. Open Serial Monitor for debug info.
+
+---
+
+## ⚙️ Configuration
+
+Edit these variables to match your environment:
+```cpp
+char ssid[] = "YourWiFi";
+const char* mqttServer = "192.168.1.100";
+const char* mqttTopic1 = "home/sensor/allpower";
+const char* mqttTopic2 = "home/sensor/energy";
+```
+
+---
