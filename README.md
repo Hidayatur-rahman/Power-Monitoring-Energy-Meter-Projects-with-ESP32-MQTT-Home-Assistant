@@ -88,6 +88,10 @@ It displays the values on a **20x4 LCD** and sends data via **MQTT**. Three butt
       <img src="https://github.com/user-attachments/assets/8f447a4b-0fe4-4c89-9615-2d9e7c3dad05" width="915" alt="Untitled Design">
 
  - Implementaion
+   > Home Assistant Display
+     <img src="https://github.com/user-attachments/assets/16d3a4e9-c33d-4d45-aa85-9142e818d64a" width="915" alt="Untitled Design">
+
+
      
 ---
 ## **Firmware Setup** <a name="firmware-setup"></a>
