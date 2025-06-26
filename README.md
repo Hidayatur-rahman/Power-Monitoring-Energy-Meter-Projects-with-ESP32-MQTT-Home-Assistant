@@ -26,7 +26,7 @@ This my first documented Arduino IoT project is both exciting and challenging. I
 ---
 ## **Features** <a name="features"></a> 
 
-| Feature              | Description                                             |
+| Feature             | Description                                             |
 |---------------------|---------------------------------------------------------|
 | Real-Time Monitoring| Reads data every second                                 |
 | Dual-Core Operation | Core 0 handles UI; Core 1 handles OTA/MQTT/NTP          |
@@ -56,7 +56,7 @@ It displays the values on a **20x4 LCD** and sends data via **MQTT**. Three butt
 ---
 ## **Hardware Components** <a name="hardware-components"></a>
 
-| Component          | Description                                  |
+| Component         | Description                                  |
 |-------------------|----------------------------------------------|
 | ESP32 Dev Board   | Dual-core MCU with WiFi                      |
 | PZEM004Tv30       | Power monitoring module (AC only)            |
@@ -71,7 +71,7 @@ It displays the values on a **20x4 LCD** and sends data via **MQTT**. Three butt
 ### ESP32 Wiring
 
 | ESP32 GPIO | Function          | Connection              |
-|------------|-------------------|--------------------------|
+|------------|-------------------|-------------------------|
 | GPIO 33    | UART RX2 (PZEM Tx)| PZEM004T Tx             |
 | GPIO 32    | UART TX2 (PZEM Rx)| PZEM004T Rx             |
 | GPIO 25    | BACK Button       | Tactile switch to GND   |
@@ -148,7 +148,7 @@ The LCD interface provides an intuitive navigation system:
 
 ## Electrical Calculations
 
-| Parameter           | Formula                                               |
+| Parameter           | Formula                                                |
 |---------------------|--------------------------------------------------------|
 | Apparent Power (S)  | S = V × I                                              |
 | Reactive Power (Q)  | Q = √(S² - P²)                                         |
