@@ -1,4 +1,4 @@
-# ⚡ ESP32 Power Monitoring System.
+# ⚡ Power Monitoring Using PZEM-004T, ESP32, MQTT and Home Assistant.
 
 A comprehensive real-time electrical power monitoring system using the **ESP32**, **PZEM-004T v3.0**, and a **20x4 I2C LCD**. Designed for integration with **Home Assistant**, **Node-RED**, or any MQTT dashboard, the system also supports **OTA updates**, and **multi-core ESP32 capabilities**.
 
