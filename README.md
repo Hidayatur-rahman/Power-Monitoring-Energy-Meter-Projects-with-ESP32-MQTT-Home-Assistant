@@ -174,6 +174,7 @@ Every 3 seconds, payload:
 }
 ```
 
+
 ### Subscribed Topic: `home/sensor/energy`
 Expected payload:
 ```json
