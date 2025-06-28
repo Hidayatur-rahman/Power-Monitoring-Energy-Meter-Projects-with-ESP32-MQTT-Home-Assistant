@@ -199,6 +199,8 @@ Progress is shown via Serial Monitor.
 ---
 ## **Home Assistant Integration** <a name="home-assistant-integration"></a>
 
+To integrate homeassitant, we should connect mqqt
+
 ---
 
 ## **Arduino Code** <a name="arduino-code"></a>
